@@ -2,19 +2,23 @@ package com.assess2;
 
 import java.io.*;
 
-public class ExcepSuper8 extends Parent{
-		 void msg() throws IOException {  
-			    System.out.println("Child");  
-
-		 }
-			public static void main(String[] args) {
-				Parent p=new ExcepSuper8();  
-				   p.msg();  
+public class ExcepSuper8{
+	public static void main(String[] args) throws Exception {
+		Dog a = new Dog();
+		a.bark("WoW_WoW");
 	}
 }
-class Parent{  
-	  void msg()
-	  {
-		  System.out.println("parent");
-	  }  
-}  
+class Animal {
+
+	public void bark(String Sound) {
+		System.out.println("Animal :" + Sound);
+	}
+}
+class Dog extends Animal {
+
+	public void bark(String Sound) {
+		System.out.println("Dog:" + Sound);
+		super.bark(Sound);
+
+	}
+}
